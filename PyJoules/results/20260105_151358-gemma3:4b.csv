@@ -1,0 +1,2 @@
+model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw
+gemma3:4b,20.325593948364258,8366.56473,108,3354,6.775197982788086,2788.85491

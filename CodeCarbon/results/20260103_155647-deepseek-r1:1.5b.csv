@@ -1,0 +1,2 @@
+model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw
+deepseek-r1:1.5b,17.045407785999487,5613.73628445972,195,4837,5.681802595333163,1871.24542815324

@@ -1,0 +1,2 @@
+model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw
+llama3.2:3b,12607.907967046,4201694.340225228,109954,362930,17.31855489978846,5771.558159650039

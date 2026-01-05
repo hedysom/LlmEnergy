@@ -1,0 +1,1 @@
+sudo chmod 0444 /sys/class/powercap/*/*/energy_uj
