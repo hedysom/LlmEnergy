@@ -1,2 +1,0 @@
-model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw
-qwen3:0.6b,14.221606969833374,5045.663449,395,6035,2.0316581385476247,720.8090641428571

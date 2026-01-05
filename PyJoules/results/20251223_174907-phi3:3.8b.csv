@@ -1,2 +1,0 @@
-model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw
-phi3:3.8b,1799.9402425289154,593720.9070570001,456885,368834,0.6360212871126909,209.7953735183746

@@ -1,2 +1,0 @@
-model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw
-gemma3:270m,13.340124607086182,3953.170174,401,5714,1.9057320867265974,564.7385962857143
