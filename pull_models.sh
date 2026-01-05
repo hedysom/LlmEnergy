@@ -10,6 +10,12 @@ models=(
   "phi3:3.8b"
 )
 
+"""
+#Install ollama
+curl -fsSL https://ollama.com/install.sh | sh
+"""
+
+#Install models
 for model in "${models[@]}"; do
   echo "------------------------------------------"
   echo "Pulling model: $model"

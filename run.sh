@@ -26,6 +26,7 @@ sudo chmod 0444 /sys/class/powercap/*/*/energy_uj
 #    PyJoules
 #---------------------
 
+"""
 #create venv and activate it
 python3 -m venv ./PyJoules/.venv
 source ./PyJoules/.venv/bin/activate
@@ -37,9 +38,10 @@ pip install -r ./PyJoules/requirements.txt
 (
   for model in "${models[@]}"; do
     while true; do
+      trap printout SIGINT SIGTERM
       echo "starting a run for $model tracking with PyJoules"
       #timeout just in case something goes wrong
-      timeout 1960 python3 ./PyJoules/main.py --model "$model" --seconds 15
+      timeout $(($1 * 2 + 30)) python3 ./PyJoules/main.py --model "$model" --seconds $1
       #try until success (exit code 0)
       if [ $? -eq 0 ]; then
         echo "Run for $model succeded"
@@ -52,6 +54,7 @@ pip install -r ./PyJoules/requirements.txt
 )
 
 deactivate
+"""
 
 #---------------------
 #    CodeCarbon
@@ -68,9 +71,10 @@ pip install -r ./CodeCarbon/requirements.txt
 (
   for model in "${models[@]}"; do
     while true; do
+      trap printout SIGINT SIGTERM
       echo "starting a run for $model tracking with CodeCarbon"
       #timeout just in case something goes wrong
-      timeout 1960 python3 ./CodeCarbon/main.py --model "$model" --seconds 15
+      timeout $(($1 * 2 + 30)) python3 ./CodeCarbon/main.py --model "$model" --seconds $1
       #try until success (exit code 0)
       if [ $? -eq 0 ]; then
         echo "Run for $model succeded"
