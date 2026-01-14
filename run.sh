@@ -26,7 +26,6 @@ sudo chmod 0444 /sys/class/powercap/*/*/energy_uj
 #    PyJoules
 #---------------------
 
-"""
 #create venv and activate it
 python3 -m venv ./PyJoules/.venv
 source ./PyJoules/.venv/bin/activate
@@ -54,7 +53,6 @@ pip install -r ./PyJoules/requirements.txt
 )
 
 deactivate
-"""
 
 #---------------------
 #    CodeCarbon
