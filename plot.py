@@ -48,7 +48,6 @@ if __name__ == "__main__":
         print(f"Found {len(CC_data)} CSV files in CodeCarbon:")
         for filename, rows in CC_data.items():
             print(f"  {filename}.csv: {len(rows)} rows")
-
         print(f"Found {len(PJ_data)} CSV files in PyJoules:")
         for filename, rows in PJ_data.items():
             print(f"  {filename}.csv: {len(rows)} rows")
@@ -79,7 +78,6 @@ if __name__ == "__main__":
             PJ_dict= dict(sorted(PJ_dict.items()))
             PJ_values = list(PJ_dict.values())
             print(PJ_dict)
-
         fig = go.Figure(data=[
             go.Bar(name='CodeCarbon', x=models, y=CC_values),
             go.Bar(name='PyJoules', x=models, y=PJ_values)

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 models=(
   "deepseek-r1:1.5b"

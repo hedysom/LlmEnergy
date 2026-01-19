@@ -85,13 +85,17 @@ if __name__ == '__main__':
 
         total_duration = 0.0
         total_energy_consumed = 0.0
+        CPU_energy = 0.0
+        GPU_energy = 0.0
 
         # Iterate through each EnergySample in the trace
         for sample in trace:
             total_duration += sample.duration
             energy = sample.energy
             # Adjust measurment units and sum them
-            total_energy_consumed += energy['package_0']/1e6 + energy['nvidia_gpu_0']/1e3
+            CPU_energy += energy['package_0']/1e6
+            GPU_energy += energy['nvidia_gpu_0']/1e3
+            total_energy_consumed += CPU_energy + GPU_energy
 
         results = {
             'model' : model,
@@ -101,6 +105,8 @@ if __name__ == '__main__':
             'n_tokens_out': sum(tokens['out']),
             'running_time': total_duration / n_samples,
             'power_draw': total_energy_consumed/ n_samples
+            'cpu': CPU_energy
+            'gpu': GPU_energy
         }
 
 
@@ -108,7 +114,7 @@ if __name__ == '__main__':
         filename = f"{timestamp}-{model}.csv"
         filepath = os.path.join(os.path.dirname(__file__), f"results/{filename}")
         with open(filepath, 'a', newline='', encoding='utf-8') as f:
-            fieldnames = ['model','running_time_total' ,'power_draw_total', 'n_tokens_in', 'n_tokens_out', 'running_time', 'power_draw']
+            fieldnames = ['model','running_time_total' ,'power_draw_total', 'n_tokens_in', 'n_tokens_out', 'running_time', 'power_draw', 'cpu', 'gpu']
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerow(results)
