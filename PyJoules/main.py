@@ -104,8 +104,8 @@ if __name__ == '__main__':
             'n_tokens_in': sum(tokens['in']),
             'n_tokens_out': sum(tokens['out']),
             'running_time': total_duration / n_samples,
-            'power_draw': total_energy_consumed/ n_samples
-            'cpu': CPU_energy
+            'power_draw': total_energy_consumed/ n_samples,
+            'cpu': CPU_energy,
             'gpu': GPU_energy
         }
 
