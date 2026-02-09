@@ -22,7 +22,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Inference benchmarking") 
     # data and model input
     parser.add_argument("--experiment")
-    parser.add_argument("--model", default="gemma3:1b")
+    parser.add_argument("--model", default="gemma3:4b")
     parser.add_argument('--temperature', type=float, default=0.7)
     parser.add_argument("--nogpu", type=int, default=0)
     parser.add_argument("--seconds", type=int, default= 30 * 60, help="number of seconds to profile model on a subset of the data -- 0 process complete")
@@ -86,7 +86,10 @@ if __name__ == '__main__':
             'n_tokens_in': sum(tokens['in']),
             'n_tokens_out': sum(tokens['out']),
             'running_time':  emission_data['duration'][0] / n_samples,
-            'power_draw': emission_data['energy_consumed'][0] * 3.6e6 / n_samples
+            'power_draw': emission_data['energy_consumed'][0] * 3.6e6 / n_samples,
+            'cpu_energy': emission_data['cpu_energy'][0]  * 3.6e6,
+            'gpu_energy': emission_data['gpu_energy'][0]  * 3.6e6,
+            'ram_energy': emission_data['ram_energy'][0]  * 3.6e6
         }
         
         #write results to a csv file
@@ -94,7 +97,8 @@ if __name__ == '__main__':
         filename = f"{timestamp}-{model}.csv"
         filepath = os.path.join(os.path.dirname(__file__), f"results/{filename}")
         with open(filepath, 'a', newline='', encoding='utf-8') as f:
-            fieldnames = ['model','running_time_total' ,'power_draw_total', 'n_tokens_in', 'n_tokens_out', 'running_time', 'power_draw']
+            fieldnames = ['model','running_time_total' ,'power_draw_total', 'n_tokens_in', 'n_tokens_out', 'running_time', 
+                          'power_draw', 'cpu_energy', 'gpu_energy', 'ram_energy']
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerow(results)

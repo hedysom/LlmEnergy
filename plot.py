@@ -53,6 +53,7 @@ if __name__ == "__main__":
             print(f"  {filename}.csv: {len(rows)} rows")
 
         CC_dict = {}
+        CC_values = []
         models = []
 
         if CC_data:
