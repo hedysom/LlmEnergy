@@ -1,2 +1,0 @@
-model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw,cpu_energy,gpu_energy,ram_energy
-qwen3:0.6b,324.7554187229998,110096.94883532473,3058,104517,15.464543748714277,5242.711849301178,25968.03790841352,77634.92610789121,6493.98481901964

@@ -1,2 +1,0 @@
-model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw,cpu_energy,gpu_energy,ram_energy
-phi3:3.8b,117.91173978900042,47895.30593049456,4203,26888,3.8036045093225943,1545.009868725631,7920.9697687704,37616.610093264,2357.7260684594403

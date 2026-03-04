@@ -1,2 +1,0 @@
-model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw,cpu,gpu
-gemma3:270m,147.51297426223755,-26429.13655,3065,55700,7.024427345820835,-1258.530311904762,-53581.48755,27152.351

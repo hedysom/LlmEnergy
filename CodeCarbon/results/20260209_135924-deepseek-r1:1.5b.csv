@@ -1,2 +1,0 @@
-model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw,cpu_energy,gpu_energy,ram_energy
-deepseek-r1:1.5b,325.1403102960012,129796.50250249237,3069,100045,14.136535230260922,5643.326195760537,23219.30995443288,100075.85406061956,6501.33848743992
