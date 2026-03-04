@@ -1,0 +1,2 @@
+model,running_time_total,power_draw_total,n_tokens_in,n_tokens_out,running_time,power_draw,cpu,gpu
+gemma3:4b,295.2468945980072,121633.513075,6804,48144,5.179770080666793,2133.921282017544,22451.222075,99182.291
