@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
         TDP_values = []
         for model in models:
-            duration = CC_times.get(model) or PJ_times.get(model, 0)
+            duration = PJ_times.get(model, 0)
             TDP_values.append(TDP_TOTAL * duration)
 
         fig = go.Figure(data=[
